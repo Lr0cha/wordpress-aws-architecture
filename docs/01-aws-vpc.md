@@ -2,8 +2,6 @@
   <h1>Criação da Infraestrutura da VPC</h1>
 </div>
 
----
-
 ### 1. Acessando o serviço
 No painel principal da AWS, pesquise e clique em **VPC**.
 
@@ -71,4 +69,11 @@ O **Resource Map** da infraestrutura ficará assim:
 > Os custos de `NAT GATEWAY` e `IP ELÁSTICO` podem ser mais elevados sendo um ponto de atenção importante.
 > 
 > Saiba mais em: [AWS VPC Pricing](https://aws.amazon.com/vpc/pricing/)
+
+
+<div align="center">
+  <a href="..">◀️</a> |
+  <a href="./02-aws-test-ec2.md">▶️</a>
+</div>
+
 
