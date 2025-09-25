@@ -1,23 +1,51 @@
 <div align="center">
-  <h1>☁️ WordPress em Alta Disponibilidade na AWS</h1>
+  <h1>
+      <img src="https://skillicons.dev/icons?i=wordpress" alt="Wordpress" /></img>
+      WordPress em Alta Disponibilidade na AWS</h1>
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=aws,docker,linux,wordpress,shell" alt="My Skills" style="margin-top: 20px;" />
+  </a>
 </div>
 
-Este projeto utiliza a [imagem oficial do WordPress](https://hub.docker.com/_/wordpress) para criar uma aplicação via **Docker Compose**, distribuída em múltiplas instâncias **EC2** gerenciadas por um **Auto Scaling Group (ASG)**.  
+<p>Este projeto utiliza a <a href="https://hub.docker.com/_/wordpress">imagem oficial do WordPress</a> para criar uma aplicação via <strong>Docker Compose</strong>, distribuída em múltiplas instâncias <strong>EC2</strong> gerenciadas por um <strong>Auto Scaling Group (ASG)</strong>. O balanceamento de carga é feito por um <strong>Application Load Balancer (ALB)</strong>. O armazenamento de arquivos é centralizado via <strong>Amazon Elastic File System (EFS)</strong>. O banco de dados da aplicação é hospedado em um <strong>Amazon RDS (MySQL)</strong>.</p>
 
-- O balanceamento de carga é feito por um **Application Load Balancer (ALB)**.  
-- O armazenamento de arquivos é centralizado via **Amazon Elastic File System (EFS)**.  
-- O banco de dados da aplicação é hospedado em um **Amazon RDS (MySQL)**.  
+<p>- O balanceamento de carga é feito por um <strong>Application Load Balancer (ALB)</strong>.<br>
+- O armazenamento de arquivos é centralizado via <strong>Amazon Elastic File System (EFS)</strong>.<br>
+- O banco de dados da aplicação é hospedado em um <strong>Amazon RDS (MySQL)</strong>.</p>
 
 <div align="center">
-  <img alt="Arquitetura do projeto" src="https://github.com/user-attachments/assets/7fb0bb81-1dd3-4d32-9e15-a8e445b32bbd"/>
+  <img alt="Arquitetura do projeto" src="https://github.com/user-attachments/assets/5878c3fa-9bf0-43a6-9bec-8f4507078439"/>
   <br />
   <i>Figura 1 - Arquitetura de alta disponibilidade do WordPress na AWS</i>
 </div>
+
+> [!TIP]  
+> Caso tenha dificuldade, recomendo dar uma olhada no meu repositório com <strong>resumos dos principais serviços da AWS</strong>:
+> 
+> 👉 [Cloud and AWS notes](https://github.com/Lr0cha/aws-cloud-notes)
 
 ---
 
 ## 📑 Etapas do Projeto
 
-1. [Criação da VPC](#)  
-2. [Configuração da EC2 para desenvolvimento inicial](#)  
-3. [Provisionamento do banco de dados no RDS](#) 
+### 🔹 Infraestrutura Base
+1. [Criação da **VPC** e subnets (públicas e privadas)](docs/01-aws-vpc.md)    
+2. [Configuração de **Security Groups** para cada camada](docs/05-aws-sgs.md)  
+
+### 🔹 Camada de Aplicação e Dados
+3. [Configuração inicial de uma instância **EC2** para testes e criação do **User Data**](docs/02-aws-test-ec2.md)
+4. [Provisionamento do banco de dados no **Amazon RDS (MySQL)**](docs/03-aws-rds.md)  
+5. [Configuração do **Amazon EFS** para armazenamento compartilhado](docs/04-aws-efs.md)
+6. [Configuração Launch Template](docs/06-launch-template.md)
+7. [Configuração do **ALB (Application Load Balancer)**](docs/07-aws-elb.md)
+8. [Configuração do **Auto Scaling Group (ASG)** integrado ao **ALB**](docs/08-aws-elb.md)   
+
+## Melhorias Futuras
+
+- Otimização de custos e monitoramento com **CloudWatch**
+- Automação da infraestrutura usando **CloudFormation** ou **Terraform**   
+
+> [!IMPORTANT]\
+> Alguns recursos (como NAT Gateway e Elastic IPs) podem gerar <strong>custos significativos</strong>.  
+>
+> Consulte sempre a [tabela oficial de preços da AWS](https://aws.amazon.com/pricing/) antes usar.
