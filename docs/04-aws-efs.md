@@ -82,3 +82,8 @@
 
 > [!NOTE] 
 > O comando exibido em **Attach** será utilizado no **script user-data** da EC2 para montar o EFS automaticamente.
+
+<div align="center">
+  <a href="./03-aws-rds.md">◀️</a> |
+  <a href="./05-aws-sgs.md">▶️</a>
+</div>
