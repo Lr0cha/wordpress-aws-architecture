@@ -57,3 +57,7 @@
 
 > [!IMPORTANT]\
 > O Auto Scaling deve estar integrado ao **ALB** para distribuir tráfego entre as instâncias.
+
+<div align="center">
+  <a href="./07-aws-elb.md">◀️</a> |
+</div>
