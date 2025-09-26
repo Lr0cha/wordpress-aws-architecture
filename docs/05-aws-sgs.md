@@ -55,3 +55,9 @@ Para este projeto foram criados os seguintes **Security Groups (SGs)**:
 | NFS  | TCP       | 2049  | ec2-template-sg | Permite que instâncias EC2 montem o EFS |
 
 </div>
+
+<div align="center">
+  <a href="./04-aws-efs.md">◀️</a> |
+  <a href="./06-launch-template.md">▶️</a>
+</div>
+
