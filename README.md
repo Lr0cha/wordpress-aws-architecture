@@ -38,7 +38,22 @@
 5. [Configuração do **Amazon EFS** para armazenamento compartilhado](docs/04-aws-efs.md)
 6. [Configuração Launch Template](docs/06-launch-template.md)
 7. [Configuração do **ALB (Application Load Balancer)**](docs/07-aws-elb.md)
-8. [Configuração do **Auto Scaling Group (ASG)** integrado ao **ALB**](docs/08-aws-elb.md)   
+8. [Configuração do **Auto Scaling Group (ASG)** integrado ao **ALB**](docs/08-aws-elb.md)
+
+
+## ✅ Resultado Final
+
+Após toda a configuração da infraestrutura, o WordPress ficou disponível de forma **altamente disponível e escalável**:
+
+<div align="center">
+  <img alt="WordPress rodando na arquitetura de alta disponibilidade" src="https://github.com/user-attachments/assets/76eb958f-12b9-47f2-a747-306470019c30"/>
+  <br />
+  <i>Figura 2 – WordPress acessível via ALB na arquitetura de alta disponibilidade</i>
+</div>
+
+> [!IMPORTANT]\
+> Por razões de custos apaguei toda a infraestrutura, então não tenho uma url que você poderá acessar.
+
 
 ## Melhorias Futuras
 
