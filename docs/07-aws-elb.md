@@ -69,3 +69,8 @@
 
 > [!IMPORTANT] 
 > O Target Group deve apontar para as instâncias **EC2 do Auto Scaling Group**. 
+
+<div align="center">
+  <a href="./06-launch-template.md">◀️</a> |
+  <a href="./08-aws-asg.md">▶️</a>
+</div>
