@@ -87,3 +87,8 @@ No console da AWS, pesquise e clique em **Aurora and RDS**.
 ## 7. Finalização
 - Revise as informações 
 - Clique em **Create database** para provisionar a instância.
+
+<div align="center">
+  <a href="./02-aws-test-ec2.md">◀️</a> |
+  <a href="./04-aws-efs.md">▶️</a>
+</div>
