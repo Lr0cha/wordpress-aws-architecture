@@ -60,6 +60,11 @@ Após toda a configuração da infraestrutura, o WordPress ficou disponível de 
 - Otimização de custos e monitoramento com **CloudWatch**
 - Automação da infraestrutura usando **CloudFormation** ou **Terraform**   
 
+> [!NOTE]\
+> A infraestrutura apresentada neste repositório segue boas práticas para a implantação do WordPress, porém de forma simplificada. Recursos adicionais como **Memcached**, **Route 53**, **RDS Multi-AZ**, entre outros. No entanto, por questões de custo, esses recursos não foram incluídos neste projeto.
+> 
+> Consulte a documentação oficial: [Best Practices for WordPress on AWS](https://docs.aws.amazon.com/whitepapers/latest/best-practices-wordpress/reference-architecture.html)
+
 > [!IMPORTANT]\
 > Alguns recursos (como NAT Gateway e Elastic IPs) podem gerar <strong>custos significativos</strong>.  
 >
