@@ -125,7 +125,7 @@ sudo docker-compose up -d
 
 ### IAM Role e Policies
 
-Caso também vá utilizar **Parameter Store** e **Systems manager** para ssh, crie uma **IAM Role** com permissões para acessar:
+Caso também vá utilizar **Parameter Store** e **Session manager** para ssh, crie uma **IAM Role** com permissões para acessar:
 * Exemplo de policy customizada para os parâmetros do projeto:
 
 ```json
@@ -133,6 +133,30 @@ Caso também vá utilizar **Parameter Store** e **Systems manager** para ssh, cr
     "Version": "2012-10-17",
     "Statement": [
         {
+            "Sid": "SSMBasics",
+            "Effect": "Allow",
+            "Action": [
+                "ssm:UpdateInstanceInformation",
+                "ssm:GetDocument",
+                "ssm:PutInventory",
+                "ssm:UpdateAssociationStatus",
+                "ssm:UpdateInstanceAssociationStatus"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "SSMSessionManager",
+            "Effect": "Allow",
+            "Action": [
+                "ssmmessages:CreateControlChannel",
+                "ssmmessages:CreateDataChannel",
+                "ssmmessages:OpenControlChannel",
+                "ssmmessages:OpenDataChannel"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "ParameterStoreReadWordPress",
             "Effect": "Allow",
             "Action": [
                 "ssm:GetParameter",
@@ -144,6 +168,7 @@ Caso também vá utilizar **Parameter Store** e **Systems manager** para ssh, cr
             ]
         },
         {
+            "Sid": "KMSDecryptDefaultSSMKey",
             "Effect": "Allow",
             "Action": [
                 "kms:Decrypt"
@@ -155,11 +180,6 @@ Caso também vá utilizar **Parameter Store** e **Systems manager** para ssh, cr
     ]
 }
 ```
-
-Além disso, associe a policy **`AmazonSSMManagedInstanceCore`** para:
-
-* Permitir acesso via **SSM Session Manager (SSH no navegador sem precisar de chave privada)**.
-* Executar comandos remotos no EC2.
 
 > [!IMPORTANT]
 > O Launch Template será usado pelo **Auto Scaling Group**, então todas as permissões e scripts configurados nele se replicam automaticamente em cada nova instância criada.
