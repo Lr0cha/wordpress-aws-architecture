@@ -1,0 +1,10 @@
+.terraform/
+*.tfstate
+*.tfstate.*
+*.backup
+*.tfvars
+*.out
+*.info
+aws-key*
+.vscode/
+*.terraform.lock.hcl
